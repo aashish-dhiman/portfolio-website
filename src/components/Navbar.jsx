@@ -16,7 +16,7 @@ const Navbar = () => {
     const [mobileView, setMobileView] = useState(false);
 
     return (
-        <nav className="sticky top-0 left-0 z-10">
+        <nav className="sticky top-0 left-0 z-20">
             <div className="flex flex-wrap items-center justify-between px-8 py-6 mx-auto bg-bgDark text-textWhite">
                 <Link
                     to="/"

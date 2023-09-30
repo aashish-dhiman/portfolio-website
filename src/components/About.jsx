@@ -13,7 +13,7 @@ const About = () => {
     }
 
     return (
-        <section className="px-2 sm:px-8 py-[60px]" id="about">
+        <section className=" sm:px-8 py-[60px]" id="about">
             <div className="flex gap-4 items-center">
                 <h3 className="text-textWhite text-3xl sm:text-5xl font-[800]">
                     About Me
