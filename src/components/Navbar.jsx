@@ -7,6 +7,7 @@ import { BsMoon, BsSun } from "react-icons/bs";
 import { MenuItems } from "../constants/MenuItem";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const handleOnClick = () => {
     console.log("Clicked");
@@ -16,8 +17,13 @@ const Navbar = () => {
     const [mobileView, setMobileView] = useState(false);
 
     return (
-        <nav className="sticky top-0 left-0 z-20">
-            <div className="flex flex-wrap items-center justify-between px-8 py-6 mx-auto bg-bgDark text-textWhite">
+        <nav className="sticky top-0 left-0 z-20 bg-bgDark">
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 3 }}
+                className="flex flex-wrap items-center justify-between px-8 py-6 mx-auto bg-bgDark text-textWhite"
+            >
                 <Link
                     to="/"
                     className="min-w-[150px] font-[600] sm:font-[800] text-lg sm:text-xl tracking-wide"
@@ -39,7 +45,16 @@ const Navbar = () => {
                 </span>
                 {/* mobile navbar */}
                 {mobileView && (
-                    <div className="absolute top-0 left-0 flex flex-col bg-transparent w-full min-h-screen">
+                    <motion.div
+                        initial={{ opacity: 0, y: -100 }}
+                        animate={
+                            mobileView
+                                ? { opacity: 1, y: 0 }
+                                : { opacity: 0, y: -100 }
+                        }
+                        transition={{ duration: 0.5 }}
+                        className="absolute top-0 left-0 flex flex-col bg-transparent w-full min-h-screen"
+                    >
                         <div className="flex flex-col md:hidden bg-bgDark relative p-10">
                             <span
                                 className="absolute top-[62px] right-12 text-[24px]"
@@ -91,7 +106,7 @@ const Navbar = () => {
                             className="flex-grow bg-transparent w-full"
                             onClick={() => setMobileView(!mobileView)}
                         ></div>
-                    </div>
+                    </motion.div>
                 )}
 
                 {/* full screen navbar */}
@@ -136,7 +151,7 @@ const Navbar = () => {
                 <span className="md:hidden text-[22px]">
                     <BsSun />
                 </span>
-            </div>
+            </motion.div>
         </nav>
     );
 };

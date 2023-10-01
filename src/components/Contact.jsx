@@ -4,8 +4,15 @@ import git from "../assets/git.svg";
 import twitter from "../assets/twitter.svg";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Contact = () => {
+    const refHeading = useRef(null);
+    const inViewHeading = useInView(refHeading);
+    const refContent = useRef(null);
+    const inViewContent = useInView(refContent);
+
     const [show, setShow] = useState(false);
     const [spin, setSpin] = useState(false);
     const [state, handleSubmit] = useForm("xpzgodpa");
@@ -14,6 +21,11 @@ const Contact = () => {
         subject: "",
         message: "",
     });
+
+    const variants1 = {
+        initial: { opacity: 0, y: 50 },
+        animate: { opacity: 1, y: 0 },
+    };
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -32,14 +44,30 @@ const Contact = () => {
 
     return (
         <section className=" sm:px-8 pt-[60px]" id="contact">
-            <div className="flex gap-4 items-center">
+            <motion.div
+                ref={refHeading}
+                variants={variants1}
+                initial="initial"
+                animate={inViewHeading ? "animate" : "initial"}
+                transition={{ duration: 0.6 }}
+                className="flex gap-4 items-center"
+            >
                 <h3 className="text-textWhite text-3xl sm:text-5xl font-[800]">
                     Get In Touch
                 </h3>
                 <div className="min-w-0 flex-grow mt-2 h-[4px] bg-textWhite"></div>
-            </div>
+            </motion.div>
             <div className="grid md:grid-cols-2 mt-4 md:mt-10 pt-20 pb-14 gap-4 relative">
-                <div>
+                <motion.div
+                    ref={refContent}
+                    initial={{ opacity: 0, y: -50 }}
+                    animate={
+                        inViewContent
+                            ? { opacity: 1, y: 0 }
+                            : { opacity: 1, y: -50 }
+                    }
+                    transition={{ duration: 1 }}
+                >
                     <h5 className="text-2xl font-bold leading-9 text-textWhite my-2">
                         Let&apos;s Connect
                     </h5>
@@ -90,8 +118,18 @@ const Contact = () => {
                             </p>
                         </div>
                     )}
-                </div>
-                <div className="mt-10 md:mt-0">
+                </motion.div>
+                <motion.div
+                    ref={refContent}
+                    initial={{ opacity: 0, y: -50 }}
+                    animate={
+                        inViewContent
+                            ? { opacity: 1, y: 0 }
+                            : { opacity: 1, y: -50 }
+                    }
+                    transition={{ duration: 1 }}
+                    className="mt-10 md:mt-0"
+                >
                     <form className="flex flex-col" onSubmit={handleSubmit}>
                         <div className="mb-6">
                             <label
@@ -188,7 +226,7 @@ const Contact = () => {
                             )}
                         </button>
                     </form>
-                </div>
+                </motion.div>
             </div>
 
             <footer className="flex items-center mb-3 p-6 text-center">

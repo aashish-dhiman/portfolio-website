@@ -1,15 +1,33 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LaunchIcon from "@mui/icons-material/Launch";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const rightView = ({ id, name, description, img, tech, source, demo }) => {
+    const refContent = useRef(null);
+    const inViewContent = useInView(refContent);
     return (
         <div className="grid grid-cols-1 lg:grid-cols-12 md:px-10 mt-[80px] lg:mt-[120px]">
             <div className="col-span-7 brightness-50 hover:brightness-100 transition-all ease-in duration-300">
                 <a href={demo} target="_blank" rel="noreferrer">
-                    <img src={img} alt="" className="rounded-sm min-h-full cursor-pointer" />
+                    <img
+                        src={img}
+                        alt=""
+                        className="rounded-sm min-h-full cursor-pointer"
+                    />
                 </a>
             </div>
-            <div className="col-span-5 flex flex-col w-full items-end relative">
+            <motion.div
+                ref={refContent}
+                initial={{ opacity: 0, x: -50 }}
+                animate={
+                    inViewContent
+                        ? { opacity: 1, x: 0 }
+                        : { opacity: 1, x: -50 }
+                }
+                transition={{ duration: 1 }}
+                className="col-span-5 flex flex-col w-full items-end relative"
+            >
                 {/* project tagline */}
                 <div className="text-3xl font-[600] w-full text-right px-4 py-2 lg:p-0">
                     <h3>{name}</h3>
@@ -53,7 +71,7 @@ const rightView = ({ id, name, description, img, tech, source, demo }) => {
                         </a>
                     )}
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 };

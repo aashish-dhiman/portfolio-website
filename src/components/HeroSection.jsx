@@ -1,12 +1,27 @@
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const HeroSection = () => {
+    const refContent = useRef(null);
+    const inViewContent = useInView(refContent, { once: true });
+
     return (
-        <section className="px-2 sm:px-8 py-8">
+        <section className="px-2 sm:px-8 py-8 overflow-hidden">
             <div className="grid grid-cols-1 sm:grid-cols-12 place-items-center">
                 {/* intro section */}
-                <div className="col-span-7">
+                <motion.div
+                    ref={refContent}
+                    initial={{ opacity: 0, x: -100, scale: 0.8 }}
+                    animate={
+                        inViewContent
+                            ? { opacity: 1, x: 0, scale: 1 }
+                            : { opacity: 0, x: -100, scale: 0.8 }
+                    }
+                    transition={{ duration: 0.8 }}
+                    className="col-span-7"
+                >
                     <h1 className="text-white mb-4 text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-[700] lg:leading-normal">
                         Hi, I&apos;m{" "}
                         <span className="text-heading">Aashish</span> a{" "}
@@ -51,15 +66,25 @@ const HeroSection = () => {
                             Download CV
                         </a>
                     </div>
-                </div>
+                </motion.div>
                 {/* image section */}
-                <div className="col-span-5 w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative overflow-hidden mt-8 sm:-mt-12">
+                <motion.div
+                    ref={refContent}
+                    initial={{ opacity: 0, x: 100, scale: 0.8 }}
+                    animate={
+                        inViewContent
+                            ? { opacity: 1, x: 0, scale: 1 }
+                            : { opacity: 0, x: 100, scale: 0.8 }
+                    }
+                    transition={{ duration: 0.8 }}
+                    className="col-span-5 w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative overflow-hidden mt-8 sm:-mt-12"
+                >
                     <img
                         src="/images/heroImg.png"
                         alt="Meme Icon"
                         className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px]"
                     />
-                </div>
+                </motion.div>
             </div>
         </section>
     );

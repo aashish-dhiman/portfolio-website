@@ -1,30 +1,66 @@
-import { useState, useTransition } from "react";
+import { useState, useTransition, useRef } from "react";
 import TabbedComponent from "./TabbedComponent";
 import { Skills } from "../constants/Skills";
+import { motion, useInView } from "framer-motion";
 
 const About = () => {
     const [tab, setTab] = useState("skills");
     const [isPending, startTransition] = useTransition();
+    const refHeading = useRef(null);
+    const refContent = useRef(null);
+    const inViewHeading = useInView(refHeading);
+    const inViewContent = useInView(refContent, { once: true });
 
     function selectTab(nextTab) {
         startTransition(() => {
             setTab(nextTab);
         });
     }
+    const variants1 = {
+        initial: { opacity: 0, y: 50 },
+        animate: { opacity: 1, y: 0 },
+    };
 
     return (
-        <section className=" sm:px-8 py-[60px]" id="about">
-            <div className="flex gap-4 items-center">
+        <section className=" sm:px-8 py-[60px] overflow-hidden" id="about">
+            <motion.div
+                ref={refHeading}
+                variants={variants1}
+                initial="initial"
+                animate={inViewHeading ? "animate" : "initial"}
+                transition={{ duration: 0.6 }}
+                className="flex gap-4 items-center"
+            >
                 <h3 className="text-textWhite text-3xl sm:text-5xl font-[800]">
                     About Me
                 </h3>
                 <div className="min-w-0 flex-grow mt-2 h-[4px] bg-textWhite"></div>
-            </div>
+            </motion.div>
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 py-6 place-items-center">
-                <div className="col-span-5 flex items-center w-[80%] sm:w-[90%] place-self-center ml-10 sm:m-0">
+                <motion.div
+                    ref={refContent}
+                    initial={{ opacity: 0, x: -100, scale: 0.8 }}
+                    animate={
+                        inViewContent
+                            ? { opacity: 1, x: 0, scale: 1 }
+                            : { opacity: 1, x: -100, scale: 0.8 }
+                    }
+                    transition={{ duration: 0.8 }}
+                    className="col-span-5 flex items-center w-[80%] sm:w-[90%] place-self-center ml-10 sm:m-0 "
+                >
                     <img src="/images/about.png" alt="meme" />
-                </div>
-                <div className="col-span-7">
+                </motion.div>
+                <motion.div
+                    ref={refContent}
+                    initial={{ opacity: 0, x: 100, scale: 0.8 }}
+                    animate={
+                        inViewContent
+                            ? { opacity: 1, x: 0, scale: 1 }
+                            : { opacity: 0, x: 100, scale: 0.8 }
+                    }
+                    transition={{ duration: 0.8 }}
+                    className="col-span-7"
+                >
                     <p className="text-textWhite p-4 text-lg sm:text-xl sm:leading-8">
                         I am a passionate MERN Stack Developer and Problem
                         Solver, dedicated to creating impactful codes that
@@ -60,7 +96,13 @@ const About = () => {
                         {tab === "skills" ? (
                             Skills?.map((skill, i) => {
                                 return (
-                                    <div key={i} className="group relative">
+                                    <motion.div
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ duration: 1 }}
+                                        key={i}
+                                        className="group relative"
+                                    >
                                         <img
                                             src={skill.img}
                                             alt={skill.description}
@@ -68,12 +110,16 @@ const About = () => {
                                         <span className="group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity bg-gray-800 text-sm text-textWhite rounded-md absolute left-1/2 -translate-x-1/2 translate-y-1/2 -mt-1 opacity-0 mx-auto px-2 w-max">
                                             {skill.description}
                                         </span>
-                                    </div>
+                                    </motion.div>
                                 );
                             })
                         ) : (
                             <ul className="list-disc pl-2">
-                                <li>
+                                <motion.li
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 1 }}
+                                >
                                     <h5 className="text-2xl font-[600]">
                                         Gautam Buddha University, Greater Noida
                                     </h5>
@@ -87,11 +133,11 @@ const About = () => {
                                             <span>2021-2025</span>
                                         </span>
                                     </div>
-                                </li>
+                                </motion.li>
                             </ul>
                         )}
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
