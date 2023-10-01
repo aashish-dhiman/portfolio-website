@@ -35,7 +35,7 @@ const rightView = ({ id, name, description, img, tech, source, demo }) => {
                         className="flex gap-1 items-center group relative animate-bounce"
                     >
                         <GitHubIcon />
-                        <span className="text-textLight text-xs px-2 opacity-0 group-hover:opacity-100 absolute top-7 -left-[100%] w-[90px]">
+                        <span className="text-textLight text-xs px-2 opacity-0 group-hover:opacity-100 absolute top-7 -left-[120%] w-[90px]">
                             Source Code
                         </span>
                     </a>

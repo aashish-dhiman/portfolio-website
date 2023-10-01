@@ -19,6 +19,7 @@ export default {
                 heading: "#3182CE",
                 textWhite: "#FAF7F2",
                 textLight: "#9ca3af",
+                darkHover: "#18191E",
             },
         },
     },
