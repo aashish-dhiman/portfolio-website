@@ -8,85 +8,91 @@ const HeroSection = () => {
     const inViewContent = useInView(refContent, { once: true });
 
     return (
-        <section className="px-2 sm:px-8 py-8 overflow-hidden">
-            <div className="grid grid-cols-1 sm:grid-cols-12 place-items-center">
-                {/* intro section */}
-                <motion.div
-                    ref={refContent}
-                    initial={{ opacity: 0, x: -100, scale: 0.8 }}
-                    animate={
-                        inViewContent
-                            ? { opacity: 1, x: 0, scale: 1 }
-                            : { opacity: 0, x: -100, scale: 0.8 }
-                    }
-                    transition={{ duration: 0.8 }}
-                    className="col-span-7"
-                >
-                    <h1 className="text-white mb-4 text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-[700] lg:leading-normal">
-                        Hi, I&apos;m{" "}
-                        <span className="text-heading">Aashish</span> a{" "}
-                        <span className="text-heading">passionate</span>{" "}
-                        Software Developer.
-                    </h1>
+        <>
+            <section
+                className="px-2 sm:px-8 overflow-hidden pb-8 pt-[130px]"
+                id="intro"
+            >
+                <div className="grid grid-cols-1 sm:grid-cols-12 place-items-center">
+                    {/* intro section */}
+                    <motion.div
+                        ref={refContent}
+                        initial={{ opacity: 0, x: -100, scale: 0.8 }}
+                        animate={
+                            inViewContent
+                                ? { opacity: 1, x: 0, scale: 1 }
+                                : { opacity: 0, x: -100, scale: 0.8 }
+                        }
+                        transition={{ duration: 0.8 }}
+                        className="col-span-7"
+                    >
+                        <h1 className="text-white mb-4 text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-[700] lg:leading-normal">
+                            Hi, I&apos;m{" "}
+                            <span className="text-heading">Aashish</span> a{" "}
+                            <span className="text-heading">passionate</span>{" "}
+                            Software Developer.
+                        </h1>
 
-                    <TypeAnimation
-                        preRenderFirstString={true}
-                        sequence={[
-                            500,
-                            "I'm a MERN Stack Developer.",
-                            1000,
-                            "I build interactive UI using React.",
-                            1000,
-                            "I convert designs into Modern UI.",
-                            1000,
-                            "I make ideas & things alive.",
-                            500,
-                        ]}
-                        speed={50}
-                        style={{ fontSize: "2em" }}
-                        repeat={Infinity}
-                    />
+                        <TypeAnimation
+                            // preRenderFirstString={true}
+                            sequence={[
+                                500,
+                                "I'm a MERN Stack Developer.",
+                                1000,
+                                "I build interactive UI using React.",
+                                1000,
+                                "I convert designs into Modern UI.",
+                                1000,
+                                "I make ideas & things alive.",
+                                500,
+                            ]}
+                            className="type"
+                            speed={50}
+                            style={{ fontSize: "2em" }}
+                            repeat={Infinity}
+                        />
 
-                    <p className="text-textPara text-base sm:text-lg mb-6 mt-3 lg:text-xl">
-                        Stick around to see some of my work.
-                    </p>
-                    <div className="flex items-center gap-4 flex-col sm:flex-row">
-                        <Link
-                            to="/contact"
-                            className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 hover:bg-slate-200 text-black bg-white text-center text-lg font-[700]"
-                        >
-                            Hire Me
-                        </Link>
-                        <a
-                            href="https://drive.google.com/file/d/1nrwlQD-UelNBfR7pZI19BB7dKRS7Or5G/view"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-transparent border-white border-2 text-white text-center hover:bg-gray-900 "
-                        >
-                            Download CV
-                        </a>
-                    </div>
-                </motion.div>
-                {/* image section */}
-                <motion.div
-                    ref={refContent}
-                    initial={{ opacity: 0, x: 100, scale: 0.8 }}
-                    animate={
-                        inViewContent
-                            ? { opacity: 1, x: 0, scale: 1 }
-                            : { opacity: 0, x: 100, scale: 0.8 }
-                    }
-                    transition={{ duration: 0.8 }}
-                    className="col-span-5 w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative overflow-hidden mt-8 sm:-mt-12"
-                >
-                    <img
-                        src="/images/heroImg.png"
-                        alt="Meme Icon"
-                        className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px]"
-                    />
-                </motion.div>
-            </div>
-        </section>
+                        <p className="text-textPara text-base sm:text-lg mb-6 mt-3 lg:text-xl">
+                            Stick around to see some of my work.
+                        </p>
+                        <div className="flex items-center gap-4 flex-col sm:flex-row">
+                            <Link
+                                to="/contact"
+                                className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 hover:bg-slate-200 text-black bg-white text-center text-lg font-[700]"
+                            >
+                                Hire Me
+                            </Link>
+                            <a
+                                href="https://drive.google.com/file/d/1nrwlQD-UelNBfR7pZI19BB7dKRS7Or5G/view"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-transparent border-white border-2 text-white text-center hover:bg-gray-900 "
+                            >
+                                Download CV
+                            </a>
+                        </div>
+                    </motion.div>
+                    {/* image section */}
+                    <motion.div
+                        ref={refContent}
+                        initial={{ opacity: 0, x: 100, scale: 0.8 }}
+                        animate={
+                            inViewContent
+                                ? { opacity: 1, x: 0, scale: 1 }
+                                : { opacity: 0, x: 100, scale: 0.8 }
+                        }
+                        transition={{ duration: 0.8 }}
+                        className="col-span-5 w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative overflow-hidden mt-8 sm:-mt-12"
+                    >
+                        <img
+                            src="/images/heroImg.png"
+                            alt="Meme Icon"
+                            className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px]"
+                        />
+                    </motion.div>
+                </div>
+            </section>
+        </>
     );
 };
 

@@ -9,7 +9,7 @@ export default function App() {
     return (
         <>
             <Navbar />
-            <main className="flex flex-col min-h-screen bg-bgDark text-textWhite px-8 py-10">
+            <main className=" bg-bgDark text-textWhite px-8">
                 <HeroSection />
                 <About />
                 <Projects />

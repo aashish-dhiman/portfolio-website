@@ -22,7 +22,7 @@ const About = () => {
     };
 
     return (
-        <section className=" sm:px-8 py-[60px] overflow-hidden" id="about">
+        <section className=" sm:px-8 py-[80px] overflow-hidden" id="about">
             <motion.div
                 ref={refHeading}
                 variants={variants1}

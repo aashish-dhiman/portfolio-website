@@ -1,4 +1,3 @@
-import React from "react";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { HiMailOpen } from "react-icons/hi";
 import { AiFillCloseCircle } from "react-icons/ai";
@@ -8,31 +7,39 @@ import { MenuItems } from "../constants/MenuItem";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
-
-const handleOnClick = () => {
-    console.log("Clicked");
-};
+import * as Scroll from "react-scroll";
+import {
+    Link as ScrollLink,
+    Button,
+    Element,
+    Events,
+    animateScroll as scroll,
+    scrollSpy,
+    scroller,
+} from "react-scroll";
 
 const Navbar = () => {
     const [mobileView, setMobileView] = useState(false);
 
     return (
-        <nav className="sticky top-0 left-0 z-20 bg-bgDark">
+        <nav className="fixed top-0 left-0 w-full z-20 bg-bgDark">
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 3 }}
                 className="flex flex-wrap items-center justify-between px-8 py-6 mx-auto bg-bgDark text-textWhite"
             >
-                <Link
-                    to="/"
-                    className="min-w-[150px] font-[600] sm:font-[800] text-lg sm:text-xl tracking-wide"
+                <ScrollLink
+                    to="intro"
+                    smooth={true}
+                    duration={500}
+                    className="min-w-[150px] cursor-pointer font-[600] sm:font-[800] text-lg sm:text-xl tracking-wide"
                 >
                     {/* for mobile view */}
                     <span className="sm:hidden">@Aashish</span>
                     {/* for web view */}
                     <span className="hidden sm:block">@Aashish_Dhiman</span>
-                </Link>
+                </ScrollLink>
 
                 {/* toggle navbar mobile view */}
                 <span
@@ -88,14 +95,15 @@ const Navbar = () => {
                                 <ul className="flex flex-col items-center justify-between p-5 gap-5 relative">
                                     {MenuItems?.map((menuItem) => (
                                         <li key={menuItem.id}>
-                                            <Link
+                                            <ScrollLink
                                                 to={menuItem.url}
+                                                smooth={true}
+                                                duration={1000}
                                                 title={menuItem.name}
-                                                onClick={handleOnClick}
-                                                className="relative text-[18px] font-[500] hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[3px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
+                                                className="relative cursor-pointer text-[18px] font-[500] hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[3px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
                                             >
                                                 {menuItem.name}
-                                            </Link>
+                                            </ScrollLink>
                                         </li>
                                     ))}
                                 </ul>
@@ -114,14 +122,15 @@ const Navbar = () => {
                     <ul className="flex items-center justify-between gap-5 relative">
                         {MenuItems?.map((menuItem) => (
                             <li key={menuItem.id}>
-                                <Link
+                                <ScrollLink
                                     to={menuItem.url}
+                                    smooth={true}
+                                    duration={1000}
                                     title={menuItem.name}
-                                    onClick={handleOnClick}
-                                    className="relative text-[18px] font-[500] hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[3px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
+                                    className="relative cursor-pointer text-[18px] font-[500] hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[3px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
                                 >
                                     {menuItem.name}
-                                </Link>
+                                </ScrollLink>
                             </li>
                         ))}
                     </ul>
@@ -144,13 +153,13 @@ const Navbar = () => {
                     <a href="mailto:aashishdhiman88@gmail.com">
                         <HiMailOpen />
                     </a>
-                    <span className="text-[20px]">
+                    {/* <span className="text-[20px]">
                         <BsSun />
-                    </span>
+                    </span> */}
                 </div>
-                <span className="md:hidden text-[22px]">
+                {/* <span className="md:hidden text-[22px]">
                     <BsSun />
-                </span>
+                </span> */}
             </motion.div>
         </nav>
     );

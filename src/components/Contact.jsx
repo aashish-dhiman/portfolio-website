@@ -43,7 +43,7 @@ const Contact = () => {
     }, [state.succeeded]);
 
     return (
-        <section className=" sm:px-8 pt-[60px]" id="contact">
+        <section className=" sm:px-8 pt-[80px]" id="contact">
             <motion.div
                 ref={refHeading}
                 variants={variants1}
