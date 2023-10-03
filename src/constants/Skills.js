@@ -40,7 +40,7 @@ export const Skills = [
     },
     {
         img: react,
-        description: "React.js",
+        description: "React",
     },
     {
         img: node,

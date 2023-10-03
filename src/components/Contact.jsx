@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { BsLinkedin, BsGithub } from "react-icons/bs";
 
 const Contact = () => {
     const refHeading = useRef(null);
@@ -78,33 +79,40 @@ const Contact = () => {
                         I&apos;ll try my best to get back to you!
                     </p>
                     <div className="flex flex-row gap-5 mt-6">
-                        <Link
+                        <a
                             href="https://github.com/aashish-dhiman/"
                             className="relative group"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
-                            <img src={git} alt="Github Icon" />
+                            {/* <img src={git} alt="Github Icon" /> */}
+                            <BsGithub className="w-7 h-7" />
                             <span className="text-textLight text-xs px-2 opacity-0 group-hover:opacity-100 absolute top-10 -left-3 w-fit">
                                 Github
                             </span>
-                        </Link>
-                        <Link
+                        </a>
+                        <a
                             href="https://www.linkedin.com/in/aashish-dhiman/"
                             className="relative group"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
                             <img src={linkedin} alt="Linkedin Icon" />
                             <span className="text-textLight text-xs px-2 opacity-0 group-hover:opacity-100 absolute top-10 -left-4 w-fit">
                                 Linkedin
                             </span>
-                        </Link>
-                        <Link
+                        </a>
+                        <a
                             href="https://twitter.com/aashish_dhimaan"
                             className="relative group"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
                             <img src={twitter} alt="twitter Icon" />
                             <span className="text-textLight text-xs px-2 opacity-0 group-hover:opacity-100 absolute top-10 -left-3 w-fit">
                                 Twitter
                             </span>
-                        </Link>
+                        </a>
                     </div>
 
                     {/* after form submission greetings */}

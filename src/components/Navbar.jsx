@@ -6,7 +6,7 @@ import { BsMoon, BsSun } from "react-icons/bs";
 import { MenuItems } from "../constants/MenuItem";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import * as Scroll from "react-scroll";
 import {
     Link as ScrollLink,
@@ -51,74 +51,78 @@ const Navbar = () => {
                     <SiEbox />
                 </span>
                 {/* mobile navbar */}
-                {mobileView && (
-                    <motion.div
-                        initial={{ opacity: 0, y: -100 }}
-                        animate={
-                            mobileView
-                                ? { opacity: 1, y: 0 }
-                                : { opacity: 0, y: -100 }
-                        }
-                        transition={{ duration: 0.5 }}
-                        className="absolute top-0 left-0 flex flex-col bg-transparent w-full min-h-screen"
-                    >
-                        <div className="flex flex-col md:hidden bg-bgDark relative p-10">
-                            <span
-                                className="absolute top-[62px] right-12 text-[24px]"
-                                onClick={() => {
-                                    setMobileView(!mobileView);
-                                }}
-                            >
-                                <AiFillCloseCircle />
-                            </span>
-                            <div className="flex gap-4 p-6 border-b-white border-b-2 text-[22px]">
-                                <a
-                                    href="https://www.linkedin.com/in/aashish-dhiman/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                <AnimatePresence>
+                    {mobileView && (
+                        <motion.div
+                            initial={{ opacity: 0, y: -200 }}
+                            exit={{ opacity: 0, y: -200 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                            className="absolute top-0 left-0 flex flex-col bg-transparent w-full min-h-screen"
+                        >
+                            <div className="flex flex-col md:hidden bg-bgDark relative p-10">
+                                <span
+                                    className="absolute top-[62px] right-12 text-[24px]"
+                                    onClick={() => {
+                                        setMobileView(!mobileView);
+                                    }}
                                 >
-                                    <BsLinkedin />
-                                </a>
-                                <a
-                                    href="https://github.com/aashish-dhiman"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <BsGithub />
-                                </a>
-                                <a href="mailto:aashishdhiman88@gmail.com">
-                                    <HiMailOpen />
-                                </a>
-                            </div>
+                                    <AiFillCloseCircle />
+                                </span>
+                                <div className="flex gap-4 p-6 border-b-white border-b-2 text-[22px]">
+                                    <a
+                                        href="https://www.linkedin.com/in/aashish-dhiman/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <BsLinkedin />
+                                    </a>
+                                    <a
+                                        href="https://github.com/aashish-dhiman"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <BsGithub />
+                                    </a>
+                                    <a href="mailto:aashishdhiman88@gmail.com">
+                                        <HiMailOpen />
+                                    </a>
+                                </div>
 
-                            <div>
-                                <ul className="flex flex-col items-center justify-between p-5 gap-5 relative">
-                                    {MenuItems?.map((menuItem) => (
-                                        <li key={menuItem.id}>
-                                            <ScrollLink
-                                                to={menuItem.url}
-                                                smooth={true}
-                                                duration={1000}
-                                                title={menuItem.name}
-                                                className="relative cursor-pointer text-[18px] font-[500] hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[3px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
-                                            >
-                                                {menuItem.name}
-                                            </ScrollLink>
-                                        </li>
-                                    ))}
-                                </ul>
+                                <div>
+                                    <ul className="flex flex-col items-center justify-between p-5 gap-5 relative">
+                                        {MenuItems?.map((menuItem) => (
+                                            <li key={menuItem.id}>
+                                                <ScrollLink
+                                                    to={menuItem.url}
+                                                    smooth={true}
+                                                    duration={1000}
+                                                    title={menuItem.name}
+                                                    onClick={() => {
+                                                        setMobileView(
+                                                            !mobileView
+                                                        );
+                                                    }}
+                                                    className="relative cursor-pointer text-[18px] font-[500] hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[3px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
+                                                >
+                                                    {menuItem.name}
+                                                </ScrollLink>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        {/* overlay */}
-                        <div
-                            className="flex-grow bg-transparent w-full"
-                            onClick={() => setMobileView(!mobileView)}
-                        ></div>
-                    </motion.div>
-                )}
+                            {/* overlay */}
+                            <div
+                                className="flex-grow bg-transparent w-full"
+                                onClick={() => setMobileView(!mobileView)}
+                            ></div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
 
                 {/* full screen navbar */}
-                <div className="hidden md:block -ml-5">
+                <div className="hidden md:block -ml-8">
                     <ul className="flex items-center justify-between gap-5 relative">
                         {MenuItems?.map((menuItem) => (
                             <li key={menuItem.id}>

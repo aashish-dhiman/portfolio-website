@@ -2,6 +2,15 @@ import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import {
+    Link as ScrollLink,
+    Button,
+    Element,
+    Events,
+    animateScroll as scroll,
+    scrollSpy,
+    scroller,
+} from "react-scroll";
 
 const HeroSection = () => {
     const refContent = useRef(null);
@@ -56,17 +65,19 @@ const HeroSection = () => {
                             Stick around to see some of my work.
                         </p>
                         <div className="flex items-center gap-4 flex-col sm:flex-row">
-                            <Link
-                                to="/contact"
-                                className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 hover:bg-slate-200 text-black bg-white text-center text-lg font-[700]"
+                            <ScrollLink
+                                to="contact"
+                                smooth={true}
+                                duration={1000}
+                                className="px-6 py-3 cursor-pointer w-full sm:w-fit rounded-full mr-4 hover:bg-slate-200 text-black bg-white text-center text-lg font-[700]"
                             >
                                 Hire Me
-                            </Link>
+                            </ScrollLink>
                             <a
                                 href="https://drive.google.com/file/d/1nrwlQD-UelNBfR7pZI19BB7dKRS7Or5G/view"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-transparent border-white border-2 text-white text-center hover:bg-gray-900 "
+                                className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-transparent border-white border-2 text-white text-center hover:bg-darkHover "
                             >
                                 Download CV
                             </a>

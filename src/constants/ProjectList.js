@@ -12,9 +12,9 @@ export const ProjectList = [
             "My portfolio website is a testament to my expertise in web development, showcasing my skills in React, Tailwind CSS, and dynamic animations powered by Framer Motion. Through a seamless blend of technology and creativity, I've crafted a platform that not only highlights my work but also reflects my dedication to crafting immersive user experiences. Explore the synergy of innovation and design in this portfolio.",
         img: portfolio,
         //max 6 tech stack
-        tech: ["React.js", "Framer Motion", "Tailwind CSS", "Material UI"],
+        tech: ["React", "Framer Motion", "Tailwind CSS", "Material UI"],
         source: "https://github.com/aashish-dhiman/portfolio-website",
-        demo: null,
+        demo: "https://portfolio-aashish.netlify.app/",
     },
     {
         id: 2,
@@ -24,7 +24,7 @@ export const ProjectList = [
         img: ecommerce,
         //max 6 tech stack
         tech: [
-            "React.js",
+            "React",
             "Node.js",
             "Express.js",
             "MongoDB",
@@ -41,7 +41,7 @@ export const ProjectList = [
             "MedConnect, an innovative online healthcare platform, redefines the way users access medical expertise. Seamlessly designed using React and tailored libraries, it offers remote consultations for medical advice. While our project is in progress with a frontend prototype, it promises a user-friendly interface, responsive design, and smooth navigation.",
         img: medconnect,
         //max 6 tech stack
-        tech: ["React.js", "Tailwind CSS", "Swiper"],
+        tech: ["React", "Tailwind CSS", "Swiper"],
         source: "https://github.com/aashish-dhiman/MedConnect",
         demo: "https://medconnect-aashish.netlify.app/",
     },
@@ -52,7 +52,7 @@ export const ProjectList = [
             "Inspired by Google Keep, Keeper is a note-taking website developed with React and adorned with Tailwind CSS and Material UI. It offers a user-friendly experience, allowing you to effortlessly create and manage notes. The responsive design ensures a seamless experience across all devices, making note-taking a breeze.",
         img: keeper,
         //max 6 tech stack
-        tech: ["React.js", "Tailwind CSS", "Material UI"],
+        tech: ["React", "Tailwind CSS", "Material UI"],
         source: "https://github.com/aashish-dhiman/Keeper-keep-your-notes",
         demo: "https://keeper-aashish.netlify.app/",
     },
