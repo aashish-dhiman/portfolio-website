@@ -55,9 +55,9 @@ const HeroSection = () => {
                                 "I make ideas & things alive.",
                                 500,
                             ]}
-                            className="type"
                             speed={50}
-                            style={{ fontSize: "2em" }}
+                            // style={{ fontSize: "10px" }}
+                            className="text-lg md:text-3xl"
                             repeat={Infinity}
                         />
 
