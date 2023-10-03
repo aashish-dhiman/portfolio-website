@@ -21,12 +21,12 @@ const LeftView = ({ id, name, description, img, tech, source, demo }) => {
                 className="col-span-5 flex flex-col w-full items-start relative order-2 lg:order-1"
             >
                 {/* project tagline */}
-                <div className="text-3xl font-[600] w-full text-left px-4 py-2 lg:p-0">
+                <div className="text-3xl font-[600] w-full text-left py-2 lg:p-0">
                     <h3>{name}</h3>
                 </div>
                 {/* description absolute */}
                 <div className="lg:absolute group top-[40px] left-0 z-10 w-full lg:w-[500px]  rounded-lg bg-bgDark md:py-2">
-                    <p className="text-md text-textPara group-hover:text-textLight transition-all ease-in-out duration-300">
+                    <p className="text-md text-textLight sm:text-textPara group-hover:text-textLight transition-all ease-in-out duration-300">
                         {description}
                     </p>
                 </div>

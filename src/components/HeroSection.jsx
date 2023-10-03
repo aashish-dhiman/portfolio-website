@@ -19,7 +19,7 @@ const HeroSection = () => {
     return (
         <>
             <section
-                className="px-2 sm:px-8 overflow-hidden pb-8 pt-[130px]"
+                className="px-2 sm:px-8 overflow-hidden pb-8 pt-[110px] sm:pt-[130px]"
                 id="intro"
             >
                 <div className="grid grid-cols-1 sm:grid-cols-12 place-items-center">
@@ -57,7 +57,7 @@ const HeroSection = () => {
                             ]}
                             speed={50}
                             // style={{ fontSize: "10px" }}
-                            className="text-lg md:text-3xl"
+                            className="text-lg md:text-3xl font-[500]"
                             repeat={Infinity}
                         />
 
