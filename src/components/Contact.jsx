@@ -58,7 +58,7 @@ const Contact = () => {
                 </h3>
                 <div className="min-w-0 flex-grow mt-2 h-[4px] bg-textWhite"></div>
             </motion.div>
-            <div className="grid md:grid-cols-2 mt-4 md:mt-10 pt-20 pb-14 gap-4 relative">
+            <div className="grid md:grid-cols-2 mt-4 md:mt-10 py-12 gap-4 relative">
                 <motion.div
                     ref={refContent}
                     initial={{ opacity: 0, y: -50 }}
