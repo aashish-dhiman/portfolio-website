@@ -86,10 +86,20 @@ const HeroSection = () => {
                     {/* image section */}
                     <motion.div
                         ref={refContent}
-                        initial={{ opacity: 0, x: 100, scale: 0.8 }}
+                        initial={{
+                            opacity: 0,
+                            x: 100,
+                            scale: 0.8,
+                            filter: "blur(6px)",
+                        }}
                         animate={
                             inViewContent
-                                ? { opacity: 1, x: 0, scale: 1 }
+                                ? {
+                                      opacity: 1,
+                                      x: 0,
+                                      scale: 1,
+                                      filter: "blur(0px)",
+                                  }
                                 : { opacity: 0, x: 100, scale: 0.8 }
                         }
                         transition={{ duration: 0.8 }}
@@ -98,6 +108,7 @@ const HeroSection = () => {
                         <img
                             src="/images/heroImg.png"
                             alt="Meme Icon"
+                            loading="lazy"
                             className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px]"
                         />
                     </motion.div>

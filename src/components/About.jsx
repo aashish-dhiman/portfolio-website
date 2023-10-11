@@ -39,16 +39,26 @@ const About = () => {
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 py-6 place-items-center">
                 <motion.div
                     ref={refContent}
-                    initial={{ opacity: 0, x: -100, scale: 0.8 }}
+                    initial={{
+                        opacity: 0,
+                        x: -100,
+                        scale: 0.8,
+                        filter: "blur(6px)",
+                    }}
                     animate={
                         inViewContent
-                            ? { opacity: 1, x: 0, scale: 1 }
+                            ? {
+                                  opacity: 1,
+                                  x: 0,
+                                  scale: 1,
+                                  filter: "blur(0px)",
+                              }
                             : { opacity: 1, x: -100, scale: 0.8 }
                     }
                     transition={{ duration: 0.8 }}
                     className="col-span-5 flex items-center w-[80%] sm:w-[90%] place-self-center ml-10 sm:m-0 "
                 >
-                    <img src="/images/about.png" alt="meme" />
+                    <img src="/images/about.png" alt="meme" loading="lazy" />
                 </motion.div>
                 <motion.div
                     ref={refContent}

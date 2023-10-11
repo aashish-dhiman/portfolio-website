@@ -3,12 +3,22 @@ import LaunchIcon from "@mui/icons-material/Launch";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const rightView = ({ id, name, description, img, tech, source, demo }) => {
+const RightView = ({ id, name, description, img, tech, source, demo }) => {
     const refContent = useRef(null);
     const inViewContent = useInView(refContent);
     return (
         <div className="grid grid-cols-1 lg:grid-cols-12 md:px-10 mt-[80px] lg:mt-[120px]">
-            <div className="col-span-7 brightness-50 hover:brightness-100 transition-all ease-in duration-300">
+            <motion.div
+                ref={refContent}
+                initial={{ opacity: 0, filter: "blur(6px) brightness(50%)" }}
+                animate={
+                    inViewContent
+                        ? { opacity: 1, filter: "blur(0px) brightness(100%)" }
+                        : { opacity: 1, filter: "blur(6px) brightness(50%)" }
+                }
+                transition={{ duration: 1 }}
+                className="col-span-7 brightness-50 hover:brightness-100 transition-all ease-in duration-300"
+            >
                 <a href={demo} target="_blank" rel="noreferrer">
                     <img
                         src={img}
@@ -16,7 +26,7 @@ const rightView = ({ id, name, description, img, tech, source, demo }) => {
                         className="rounded-sm min-h-full cursor-pointer"
                     />
                 </a>
-            </div>
+            </motion.div>
             <motion.div
                 ref={refContent}
                 initial={{ opacity: 0, x: -50 }}
@@ -76,4 +86,4 @@ const rightView = ({ id, name, description, img, tech, source, demo }) => {
     );
 };
 
-export default rightView;
+export default RightView;

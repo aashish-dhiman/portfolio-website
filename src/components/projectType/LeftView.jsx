@@ -65,15 +65,26 @@ const LeftView = ({ id, name, description, img, tech, source, demo }) => {
                 </div>
             </motion.div>
             {/* project image */}
-            <div className="col-span-7 order-1 lg:order-2 brightness-50 hover:brightness-100 transition-all ease-in duration-300 ">
+            <motion.div
+                ref={refContent}
+                initial={{ opacity: 0, filter: "blur(6px) brightness(50%)" }}
+                animate={
+                    inViewContent
+                        ? { opacity: 1, filter: "blur(0px) brightness(100%)" }
+                        : { opacity: 1, filter: "blur(6px) brightness(50%)" }
+                }
+                transition={{ duration: 1 }}
+                className="col-span-7 order-1 lg:order-2 brightness-50 hover:brightness-100 transition-all ease-in duration-300 "
+            >
                 <a href={demo} target="_blank" rel="noreferrer">
                     <img
                         src={img}
                         alt={name}
+                        loading="lazy"
                         className="rounded-sm min-h-full cursor-pointer"
                     />
                 </a>
-            </div>
+            </motion.div>
         </div>
     );
 };
