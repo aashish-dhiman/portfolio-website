@@ -140,23 +140,29 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="hidden md:flex items-center justify-between gap-4 text-[24px]">
-                    <a
-                        href="https://www.linkedin.com/in/aashish-dhiman/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <BsLinkedin />
-                    </a>
-                    <a
-                        href="https://github.com/aashish-dhiman"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <BsGithub />
-                    </a>
-                    <a href="mailto:aashishdhiman88@gmail.com">
-                        <HiMailOpen />
-                    </a>
+                    <span className="py-2 px-1 hover:-translate-y-[2px] transition-all duration-500 ease-in-out cursor-pointer">
+                        <a
+                            href="https://www.linkedin.com/in/aashish-dhiman/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <BsLinkedin />
+                        </a>
+                    </span>
+                    <span className="py-2 px-1 hover:-translate-y-[2px] transition-all duration-500 ease-in-out cursor-pointer">
+                        <a
+                            href="https://github.com/aashish-dhiman"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <BsGithub />
+                        </a>
+                    </span>
+                    <span className="py-2 px-1 hover:-translate-y-[2px] transition-all duration-500 ease-in-out cursor-pointer">
+                        <a href="mailto:aashishdhiman88@gmail.com">
+                            <HiMailOpen />
+                        </a>
+                    </span>
                     {/* <span className="text-[20px]">
                         <BsSun />
                     </span> */}

@@ -9,7 +9,7 @@ export default function App() {
     return (
         <>
             <Navbar />
-            <main className=" bg-bgDark text-textWhite px-8">
+            <main className=" bg-bgDark text-textWhite px-5 md:px-8">
                 <HeroSection />
                 <About />
                 <Projects />

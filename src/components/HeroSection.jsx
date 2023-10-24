@@ -19,7 +19,7 @@ const HeroSection = () => {
     return (
         <>
             <section
-                className="px-2 sm:px-8 overflow-hidden pb-8 pt-[110px] sm:pt-[130px]"
+                className="px- sm:px-8 overflow-hidden pb-8 pt-[110px] sm:pt-[130px]"
                 id="intro"
             >
                 <div className="grid grid-cols-1 sm:grid-cols-12 place-items-center">
@@ -64,12 +64,12 @@ const HeroSection = () => {
                         <p className="text-textPara text-base sm:text-lg mb-6 mt-3 lg:text-xl">
                             Stick around to see some of my work.
                         </p>
-                        <div className="flex items-center gap-4 flex-col sm:flex-row">
+                        <div className="flex items-center gap-4 flex-col sm:flex-row ">
                             <ScrollLink
                                 to="contact"
                                 smooth={true}
                                 duration={1000}
-                                className="px-6 py-3 cursor-pointer w-full sm:w-fit rounded-full mr-4 hover:bg-slate-200 text-black bg-white text-center text-lg font-[700]"
+                                className="px-6 py-3 cursor-pointer w-full sm:w-fit rounded-full md:mr-4 hover:bg-slate-200 text-black bg-white text-center text-lg font-[700] hover:-translate-y-[2px] transition-all duration-500 ease-in-out"
                             >
                                 Hire Me
                             </ScrollLink>
@@ -77,7 +77,7 @@ const HeroSection = () => {
                                 href="https://drive.google.com/file/d/1nrwlQD-UelNBfR7pZI19BB7dKRS7Or5G/view"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-transparent border-white border-2 text-white text-center hover:bg-darkHover "
+                                className="px-6 py-3 w-full sm:w-fit rounded-full md:mr-4 bg-transparent border-white border-2 text-white text-center hover:bg-darkHover hover:-translate-y-[2px] transition-all duration-500 ease-in-out "
                             >
                                 Download CV
                             </a>
@@ -103,7 +103,7 @@ const HeroSection = () => {
                                 : { opacity: 0, x: 100, scale: 0.8 }
                         }
                         transition={{ duration: 0.8 }}
-                        className="col-span-5 w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative overflow-hidden mt-8 sm:-mt-12"
+                        className="col-span-5 w-[250px] h-[180px] lg:w-[400px] lg:h-[400px] relative overflow-hidden mt-12 sm:-mt-12"
                     >
                         <img
                             src="/images/heroImg.png"

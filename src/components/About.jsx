@@ -111,7 +111,7 @@ const About = () => {
                                         animate={{ opacity: 1 }}
                                         transition={{ duration: 1 }}
                                         key={i}
-                                        className="group relative"
+                                        className="group relative hover:-translate-y-[4px] transition-all duration-500 ease-in-out cursor-pointer"
                                     >
                                         <img
                                             src={skill.img}

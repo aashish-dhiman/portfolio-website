@@ -1,11 +1,13 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LaunchIcon from "@mui/icons-material/Launch";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const RightView = ({ id, name, description, img, tech, source, demo }) => {
     const refContent = useRef(null);
     const inViewContent = useInView(refContent);
+    const [isMouseOver, setIsMouseOver] = useState(false);
+
     return (
         <div className="grid grid-cols-1 lg:grid-cols-12 md:px-10 mt-[80px] lg:mt-[120px]">
             <motion.div
@@ -17,7 +19,13 @@ const RightView = ({ id, name, description, img, tech, source, demo }) => {
                         : { opacity: 1, filter: "blur(6px) brightness(50%)" }
                 }
                 transition={{ duration: 1 }}
-                className="col-span-7 brightness-50 hover:brightness-100 transition-all ease-in duration-300"
+                className="col-span-7 brightness-50 hover:brightness-100 transition-all ease-in-out duration-700 hover:-translate-y-[4px] "
+                onMouseEnter={() => {
+                    setIsMouseOver(true);
+                }}
+                onMouseLeave={() => {
+                    setIsMouseOver(false);
+                }}
             >
                 <a href={demo} target="_blank" rel="noreferrer">
                     <img
@@ -44,7 +52,11 @@ const RightView = ({ id, name, description, img, tech, source, demo }) => {
                 </div>
                 {/* description absolute */}
                 <div className="lg:absolute group top-[40px] z-10 right-0 w-full lg:w-[500px]  rounded-lg bg-bgDark md:pl-4 md:py-2">
-                    <p className="text-md text-textLight sm:text-textPara cursor-pointer group-hover:text-textLight transition-all ease-in-out duration-300">
+                    <p
+                        className={`text-md text-textLight cursor-pointer ${
+                            isMouseOver && "text-textPara"
+                        } transition-all ease-in-out duration-300`}
+                    >
                         {description}
                     </p>
                 </div>

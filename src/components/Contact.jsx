@@ -81,7 +81,7 @@ const Contact = () => {
                     <div className="flex flex-row gap-5 mt-6">
                         <a
                             href="https://github.com/aashish-dhiman/"
-                            className="relative group"
+                            className="relative group hover:-translate-y-[2px] transition-all duration-500 ease-in-out "
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -93,7 +93,7 @@ const Contact = () => {
                         </a>
                         <a
                             href="https://www.linkedin.com/in/aashish-dhiman/"
-                            className="relative group"
+                            className="relative group hover:-translate-y-[2px] transition-all duration-500 ease-in-out "
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -104,7 +104,7 @@ const Contact = () => {
                         </a>
                         <a
                             href="https://twitter.com/aashish_dhimaan"
-                            className="relative group"
+                            className="relative group hover:-translate-y-[2px] transition-all duration-500 ease-in-out "
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -210,7 +210,7 @@ const Contact = () => {
                             type="submit"
                             disabled={state.submitting}
                             onClick={() => setSpin(true)}
-                            className="rounded-full mr-4 bg-transparent border-white border-2 text-white text-center hover:bg-darkHover font-medium py-2.5 px-5 w-full"
+                            className="rounded-full mr-4 bg-transparent border-white border-2 text-white text-center hover:bg-darkHover font-medium py-2.5 px-5 w-full hover:-translate-y-[1px] transition-all duration-500 ease-in-out "
                         >
                             {spin ? (
                                 <svg
