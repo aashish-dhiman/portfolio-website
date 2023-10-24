@@ -74,7 +74,7 @@ const HeroSection = () => {
                                 Hire Me
                             </ScrollLink>
                             <a
-                                href="https://drive.google.com/file/d/1nrwlQD-UelNBfR7pZI19BB7dKRS7Or5G/view"
+                                href="https://drive.google.com/file/d/18dulvLy2g8wFwarH3HAyMPwR_QufKZFY/view?usp=drive_link"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-6 py-3 w-full sm:w-fit rounded-full md:mr-4 bg-transparent border-white border-2 text-white text-center hover:bg-darkHover hover:-translate-y-[2px] transition-all duration-500 ease-in-out "
