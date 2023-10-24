@@ -26,7 +26,7 @@ const LeftView = ({ id, name, description, img, tech, source, demo }) => {
                 </div>
                 {/* description absolute */}
                 <div className="lg:absolute group top-[40px] left-0 z-10 w-full lg:w-[500px]  rounded-lg bg-bgDark md:py-2">
-                    <p className="text-md text-textLight sm:text-textPara group-hover:text-textLight transition-all ease-in-out duration-300">
+                    <p className="text-md text-textLight sm:text-textPara cursor-pointer group-hover:text-textLight transition-all ease-in-out duration-300">
                         {description}
                     </p>
                 </div>

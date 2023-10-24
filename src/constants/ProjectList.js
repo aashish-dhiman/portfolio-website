@@ -1,5 +1,5 @@
 import ecommerce from "../assets/projects/ecommerce.png";
-import portfolio from "../assets/projects/portfolio.png";
+import discord from "../assets/projects/discord.png";
 import medconnect from "../assets/projects/medconnect.png";
 import keeper from "../assets/projects/keeper.png";
 import authorisation from "../assets/projects/authorisation.png";
@@ -7,14 +7,14 @@ import authorisation from "../assets/projects/authorisation.png";
 export const ProjectList = [
     {
         id: 1,
-        name: "Portfolio",
+        name: "Discord Clone",
         description:
-            "My portfolio website is a testament to my expertise in web development, showcasing my skills in React, Tailwind CSS, and dynamic animations powered by Framer Motion. Through a seamless blend of technology and creativity, I've crafted a platform that not only highlights my work but also reflects my dedication to crafting immersive user experiences. Explore the synergy of innovation and design in this portfolio.",
-        img: portfolio,
+            "Discord Clone is a web application meticulously crafted with React and Tailwind CSS to mirror the essence and functionality of the original Discord app. It encompasses a faithful reproduction of Discord's home page, Nitro page, and Safety page. The application boasts full responsiveness, ensuring a seamless experience across devices. Furthermore, every link seamlessly connects to the official Discord site.",
+        img: discord,
         //max 6 tech stack
-        tech: ["React", "Framer Motion", "Tailwind CSS", "Material UI"],
-        source: "https://github.com/aashish-dhiman/portfolio-website",
-        demo: "https://portfolio-aashish.netlify.app/",
+        tech: ["React", "Tailwind CSS", "Material UI"],
+        source: "https://github.com/aashish-dhiman/discord-clone",
+        demo: "https://discord-aashish.vercel.app/",
     },
     {
         id: 2,
@@ -36,14 +36,14 @@ export const ProjectList = [
     },
     {
         id: 3,
-        name: "Medconnect",
+        name: "Secret Keeper",
         description:
-            "MedConnect, an innovative online healthcare platform, redefines the way users access medical expertise. Seamlessly designed using React and tailored libraries, it offers remote consultations for medical advice. While our project is in progress with a frontend prototype, it promises a user-friendly interface, responsive design, and smooth navigation.",
-        img: medconnect,
+            "The Secret Keeper built with Node.js, Express.js, and Passport.js, provides a user-friendly platform for secure registration, secret sharing, and anonymous content viewing. It incorporates Google OAuth 2.0 for seamless login. With a focus on ease of use, it showcases modern web development in a straightforward manner, offering a safe and engaging online experience.",
+        img: authorisation,
         //max 6 tech stack
-        tech: ["React", "Tailwind CSS", "Swiper"],
-        source: "https://github.com/aashish-dhiman/MedConnect",
-        demo: "https://medconnect-aashish.netlify.app/",
+        tech: ["Node.js", "Express.js", "EJS", "MongoDB", "Passport.js"],
+        source: "https://github.com/aashish-dhiman/Authorisation",
+        demo: null,
     },
     {
         id: 4,
@@ -58,13 +58,13 @@ export const ProjectList = [
     },
     {
         id: 5,
-        name: "Authorisation",
+        name: "Medconnect",
         description:
-            "The Authorization-Secret Website, built with Node.js, Express.js, and Passport.js, provides a user-friendly platform for secure registration, secret sharing, and anonymous content viewing. It incorporates Google OAuth 2.0 for seamless login. With a focus on ease of use, it showcases modern web development in a straightforward manner, offering a safe and engaging online experience.",
-        img: authorisation,
+            "MedConnect, an innovative online healthcare platform, redefines the way users access medical expertise. Seamlessly designed using React and tailored libraries, it offers remote consultations for medical advice. While our project is just a frontend prototype, it promises a user-friendly interface, responsive design, and smooth navigation.",
+        img: medconnect,
         //max 6 tech stack
-        tech: ["Node.js", "Express.js", "EJS", "MongoDB", "Passport.js"],
-        source: "https://github.com/aashish-dhiman/Authorisation",
-        demo: null,
+        tech: ["React", "Tailwind CSS", "Swiper"],
+        source: "https://github.com/aashish-dhiman/MedConnect",
+        demo: "https://medconnect-aashish.netlify.app/",
     },
 ];
