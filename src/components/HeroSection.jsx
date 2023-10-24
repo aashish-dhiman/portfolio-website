@@ -19,7 +19,7 @@ const HeroSection = () => {
     return (
         <>
             <section
-                className="px- sm:px-8 overflow-hidden pb-8 pt-[110px] sm:pt-[130px]"
+                className="sm:px-8 overflow-hidden pb-8 pt-[110px] sm:pt-[120px] sm:pb-10"
                 id="intro"
             >
                 <div className="grid grid-cols-1 sm:grid-cols-12 place-items-center">
@@ -103,7 +103,7 @@ const HeroSection = () => {
                                 : { opacity: 0, x: 100, scale: 0.8 }
                         }
                         transition={{ duration: 0.8 }}
-                        className="col-span-5 w-[250px] h-[180px] lg:w-[400px] lg:h-[400px] relative overflow-hidden mt-12 sm:-mt-12"
+                        className="col-span-5 w-[250px] h-[180px] lg:w-[400px] lg:h-[400px] relative overflow-hidden mt-12 sm:-mt-4"
                     >
                         <img
                             src="/images/heroImg.png"
