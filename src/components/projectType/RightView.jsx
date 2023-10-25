@@ -47,7 +47,11 @@ const RightView = ({ id, name, description, img, tech, source, demo }) => {
                 className="col-span-5 flex flex-col w-full items-end relative"
             >
                 {/* project tagline */}
-                <div className="text-3xl font-[600] w-full text-right py-2 lg:p-0">
+                <div
+                    className={`text-3xl font-[600] w-full text-right py-2 lg:p-0 ${
+                        isMouseOver && "text-textPara"
+                    } transition-all ease-in-out duration-300`}
+                >
                     <h3>{name}</h3>
                 </div>
                 {/* description absolute */}

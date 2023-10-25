@@ -1,7 +1,7 @@
 const TabbedComponent = ({ active, selectTab, children }) => {
     const buttonClasses = active
         ? "text-white border-b-2 border-b-textPara"
-        : "text-[#ADB7BE] hover:-translate-y-[1px] transition-all duration-500 ease-in-out";
+        : "text-[#ADB7BE] hover:border-b-2 border-b-textPara hover:-translate-y-[1px] transition-all duration-100 ease-in-out";
 
     return (
         <button
