@@ -1,7 +1,8 @@
-import { useState, useTransition, useRef } from "react";
+import { useState, useTransition, useRef, Suspense } from "react";
 import TabbedComponent from "./TabbedComponent";
 import { Skills } from "../constants/Skills";
 import { motion, useInView } from "framer-motion";
+import Loading from "./Loading";
 
 const About = () => {
     const [tab, setTab] = useState("skills");
@@ -36,7 +37,7 @@ const About = () => {
                 </h3>
                 <div className="min-w-0 flex-grow mt-2 h-[4px] bg-textWhite"></div>
             </motion.div>
-            <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 py-6 place-items-center">
+            <div className="py-6 flex flex-col md:flex-row items-center md:items-start justify-between gap-6">
                 <motion.div
                     ref={refContent}
                     initial={{
@@ -56,9 +57,16 @@ const About = () => {
                             : { opacity: 1, x: -100, scale: 0.8 }
                     }
                     transition={{ duration: 0.8 }}
-                    className="col-span-5 flex items-center w-[80%] sm:w-[90%] place-self-center ml-10 sm:m-0 "
+                    className="flex-1 md:max-w-[40%] sm:mt-10 "
                 >
-                    <img src="/images/about.png" alt="meme" loading="lazy" />
+                    <Suspense fallback={<Loading />}>
+                        <img
+                            src="/images/about.png"
+                            alt="meme"
+                            loading="lazy"
+                            className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] "
+                        />
+                    </Suspense>
                 </motion.div>
                 <motion.div
                     ref={refContent}
@@ -69,21 +77,18 @@ const About = () => {
                             : { opacity: 0, x: 100, scale: 0.8 }
                     }
                     transition={{ duration: 0.8 }}
-                    className="col-span-7"
+                    className="flex-1"
                 >
-                    <p className="text-textWhite p-4 text-lg sm:text-xl sm:leading-8">
-                        I am a passionate MERN Stack Developer and Problem
+                    <p className="text-textWhite p-4 text-lg sm:text-xl sm:leading-7">
+                        I am a passionate MERN Stack Developer and a Problem
                         Solver, dedicated to creating impactful codes that
                         thrive on the internet.
                         <br />
-                        I have experience working with C++, JavaScript, HTML,
-                        CSS, React.js, Node.js, Express.js, MongoDB, Tailwind
-                        CSS, and Git.
+                        I have experience working with C, C++, JavaScript,
+                        TypeScript, Python, HTML, CSS, React.js, Next.js,
+                        Node.js, Express.js, MongoDB, Tailwind CSS, and Git.
                         <br />I am a quick learner and I am always looking to
                         expand my knowledge and skill set.
-                        {/* <br />I am not only a dedicated team player but also
-                        thrilled to collaborate with others in crafting
-                        remarkable applications. */}
                     </p>
 
                     <div className="flex flex-row justify-start gap-6 pl-4">
@@ -100,6 +105,13 @@ const About = () => {
                         >
                             {" "}
                             Education{" "}
+                        </TabbedComponent>
+                        <TabbedComponent
+                            selectTab={() => selectTab("work")}
+                            active={tab === "work"}
+                        >
+                            {" "}
+                            Work Experience{" "}
                         </TabbedComponent>
                     </div>
                     <div className="mt-8 pl-4 max-w-[100%] min-h-[140px] flex flex-wrap gap-x-10 gap-y-8">
@@ -123,7 +135,7 @@ const About = () => {
                                     </motion.div>
                                 );
                             })
-                        ) : (
+                        ) : tab === "education" ? (
                             <ul className="list-disc pl-2">
                                 <motion.li
                                     initial={{ opacity: 0 }}
@@ -142,6 +154,72 @@ const About = () => {
                                             </p>
                                             <span>2021-2025</span>
                                         </span>
+                                    </div>
+                                </motion.li>
+                            </ul>
+                        ) : (
+                            <ul className="list-disc pl-2 flex flex-col gap-4">
+                                <motion.li
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 1 }}
+                                >
+                                    <h5 className="text-2xl font-[600]">
+                                        SDE Intern{" "}
+                                        <span className="text-base font-[500]">
+                                            - FinGPT
+                                        </span>
+                                    </h5>
+                                    <div className="mt-2 flex gap-4 items-center">
+                                        <div className="w-[15px] h-[2px] bg-textWhite "></div>
+                                        <span>
+                                            <p>
+                                                Working on a trading platform
+                                                for a stealth-mode startup based
+                                                in California, USA. Integrating
+                                                AI capabilities and enhancing
+                                                user experience of the platform
+                                                using Next.js, TypeScript,
+                                                NextAuth, Tailwind CSS, React
+                                                Query and Open AI.
+                                            </p>
+                                        </span>
+                                    </div>
+                                    <div className="ml-6 mt-1 text-gray-500 font-medium flex items-center justify-between max-w-[95%]">
+                                        <span className="">
+                                            Jan 2024 - Present
+                                        </span>
+                                        <span className="">Remote</span>
+                                    </div>
+                                </motion.li>
+                                <motion.li
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 1 }}
+                                >
+                                    <h5 className="text-2xl font-[600]">
+                                        Subject Matter Expert{" "}
+                                        <span className="text-base font-[500]">
+                                            - Chegg India
+                                        </span>
+                                    </h5>
+                                    <div className="mt-2 flex gap-4 items-center">
+                                        <div className="w-[15px] h-[2px] bg-textWhite "></div>
+                                        <span>
+                                            <p>
+                                                Working as a Subject Matter
+                                                Expert in Computer Science
+                                                domain, providing detailed
+                                                explanations and mentoring
+                                                support to students.
+                                            </p>
+                                        </span>
+                                    </div>
+                                    <div className="ml-6 mt-1 text-gray-500 font-medium flex items-center justify-between max-w-[95%]">
+                                        <span className="">
+                                            Oct 2023 - Present
+                                        </span>
+                                        <span className="">Remote</span>
                                     </div>
                                 </motion.li>
                             </ul>

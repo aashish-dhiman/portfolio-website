@@ -22,7 +22,7 @@ const Navbar = () => {
     const [mobileView, setMobileView] = useState(false);
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-20 bg-bgDark">
+        <nav className="fixed top-0 left-0 w-full z-30 bg-bgDark">
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

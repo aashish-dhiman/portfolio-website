@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LaunchIcon from "@mui/icons-material/Launch";
 import { motion, useInView } from "framer-motion";
@@ -19,7 +20,7 @@ const RightView = ({ id, name, description, img, tech, source, demo }) => {
                         : { opacity: 1, filter: "blur(6px) brightness(50%)" }
                 }
                 transition={{ duration: 1 }}
-                className="col-span-7 brightness-50 hover:brightness-100 transition-all ease-in-out duration-700 hover:-translate-y-[4px] "
+                className="col-span-7 brightness-50 hover:brightness-100 transition-all ease-in-out duration-700 hover:scale-[1.05] hover:z-20 "
                 onMouseEnter={() => {
                     setIsMouseOver(true);
                 }}
@@ -31,7 +32,7 @@ const RightView = ({ id, name, description, img, tech, source, demo }) => {
                     <img
                         src={img}
                         alt=""
-                        className="rounded-sm min-h-full cursor-pointer"
+                        className="rounded-md min-h-full cursor-pointer shadow-slate-800 shadow-lg"
                     />
                 </a>
             </motion.div>
@@ -48,14 +49,14 @@ const RightView = ({ id, name, description, img, tech, source, demo }) => {
             >
                 {/* project tagline */}
                 <div
-                    className={`text-3xl font-[600] w-full text-right py-2 lg:p-0 ${
+                    className={`text-3xl font-[600] w-full text-right py-2 lg:py-0 px-3 ${
                         isMouseOver && "text-textPara"
                     } transition-all ease-in-out duration-300`}
                 >
                     <h3>{name}</h3>
                 </div>
                 {/* description absolute */}
-                <div className="lg:absolute group top-[40px] z-10 right-0 w-full lg:w-[500px]  rounded-lg bg-bgDark md:pl-4 md:py-2">
+                <div className="lg:absolute group top-[40px] z-10 right-0 w-full lg:w-[500px] rounded-lg bg-bgDark md:pl-4 md:py-2 shadow-slate-800 shadow-sm mt-1">
                     <p
                         className={`text-md text-textLight cursor-pointer ${
                             isMouseOver && "text-textPara"

@@ -7,9 +7,10 @@ import node from "../assets/node.svg";
 import mongo from "../assets/mongo.svg";
 import express from "../assets/express.svg";
 import tailwind from "../assets/tailwind.svg";
-import materialUI from "../assets/materialUI.svg";
+// import materialUI from "../assets/materialUI.svg";
 import github from "../assets/github.svg";
-import vs from "../assets/vs.svg";
+import next from "../assets/next.svg";
+import typescript from "../assets/typescript.svg";
 import html from "../assets/html.svg";
 import css from "../assets/css.svg";
 
@@ -31,6 +32,10 @@ export const Skills = [
         description: "JavaScript",
     },
     {
+        img: typescript,
+        description: "TypeScript",
+    },
+    {
         img: html,
         description: "HTML",
     },
@@ -40,7 +45,11 @@ export const Skills = [
     },
     {
         img: react,
-        description: "React",
+        description: "React.js",
+    },
+    {
+        img: next,
+        description: "Next.js",
     },
     {
         img: node,
@@ -58,16 +67,12 @@ export const Skills = [
         img: tailwind,
         description: "Tailwind CSS",
     },
-    {
-        img: materialUI,
-        description: "MUI",
-    },
+    // {
+    //     img: materialUI,
+    //     description: "MUI",
+    // },
     {
         img: github,
         description: "Github",
-    },
-    {
-        img: vs,
-        description: "VS Code",
     },
 ];
