@@ -165,23 +165,16 @@ const About = () => {
                                     transition={{ duration: 1 }}
                                 >
                                     <h5 className="text-2xl font-[600]">
-                                        SDE Intern{" "}
+                                        Full Stack Engineer Intern{" "}
                                         <span className="text-base font-[500]">
-                                            - FinGPT
+                                            - Epoch
                                         </span>
                                     </h5>
                                     <div className="mt-2 flex gap-4 items-center">
                                         <div className="w-[15px] h-[2px] bg-textWhite "></div>
                                         <span>
                                             <p>
-                                                Working on a trading platform
-                                                for a stealth-mode startup based
-                                                in California, USA. Integrating
-                                                AI capabilities and enhancing
-                                                user experience of the platform
-                                                using Next.js, TypeScript,
-                                                NextAuth, Tailwind CSS, React
-                                                Query and Open AI.
+                                                Developing an AI-driven trading platform to facilitate streamlined stock analysis, integrating a financial chatbot and a comprehensive stock dashboard. Utilizing technologies such as Next.js, Typescript, Tailwind CSS, Shadcn UI, Web Socket and NextAuth for seamless functionality.
                                             </p>
                                         </span>
                                     </div>
