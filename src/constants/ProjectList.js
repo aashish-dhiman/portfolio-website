@@ -33,7 +33,7 @@ export const ProjectList = [
             "Stripe",
         ],
         source: "https://github.com/aashish-dhiman/E-Commerce",
-        demo: "https://better-overcoat-fly.cyclic.cloud/",
+        demo: "https://flickart-aashish.vercel.app/",
     },
     {
         id: 3,
